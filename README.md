@@ -262,7 +262,7 @@ aws ecr delete-repository --repository-name my-webapp --force
 aws logs delete-log-group --log-group-name /ecs/webapp-cicd-task
 ```
 
-(Optional: delete IAM user and keys if created)
+(Optional: Delete IAM user and keys if created)
 
 ---
 

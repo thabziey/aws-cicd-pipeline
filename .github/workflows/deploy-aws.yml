@@ -103,7 +103,13 @@ jobs:
         task-definition: ./task-definition.json  # Specify full path
         container-name: webapp  # Make sure this matches your container name in task definition
         image: ${{ steps.build-image.outputs.image }}
-        
+    
+    - name: Debug ECS environment values
+      run: |
+        echo "🔍 ECS_CLUSTER: $ECS_CLUSTER"
+        echo "🔍 ECS_SERVICE: $ECS_SERVICE"
+        echo "🔍 ECS_TASK_DEFINITION: $ECS_TASK_DEFINITION"
+            
     - name: Deploy Amazon ECS task definition
       uses: aws-actions/amazon-ecs-deploy-task-definition@v1
       with:

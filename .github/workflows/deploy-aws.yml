@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
     paths:
-      - '**'  # Run when anything in the REPO changes
+      - '**'  # Run when anything in the repo changes
   pull_request:
     branches: [main]
     paths:
@@ -109,7 +109,7 @@ jobs:
         echo "🔍 ECS_CLUSTER: $ECS_CLUSTER"
         echo "🔍 ECS_SERVICE: $ECS_SERVICE"
         echo "🔍 ECS_TASK_DEFINITION: $ECS_TASK_DEFINITION"
-            
+
     - name: Deploy Amazon ECS task definition
       uses: aws-actions/amazon-ecs-deploy-task-definition@v1
       with:

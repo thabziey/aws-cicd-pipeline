@@ -2,9 +2,6 @@
 
 FROM node:18-alpine
 
-RUN apk update && apk upgrade && \
-    apk add --no-cache some-package-if-needed
-
 WORKDIR /app
 
 COPY package*.json ./

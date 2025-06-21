@@ -58,8 +58,8 @@ docker run -p 3001:3001 -e ENVIRONMENT=local my-webapp
 ```bash
 aws configure
 aws sts get-caller-identity
-chmod +x aws-setup.sh
-./aws-setup.sh
+chmod +x aws_setup.sh
+./aws_setup.sh
 ```
 
 * Save all outputs to use in GitHub secrets
@@ -193,7 +193,7 @@ aws sts get-caller-identity
 
 ```bash
 aws --version
-bash -x aws-setup.sh
+bash -x aws_setup.sh
 ```
 
 ### GitHub Actions Issues
@@ -242,7 +242,7 @@ const apiKey = process.env.API_KEY || 'dev-key';
 
 ```bash
 CLUSTER_NAME="webapp-staging-cluster"
-./aws-setup.sh
+./aws_setup.sh
 ```
 
 ### Monitoring & Alerts
@@ -255,11 +255,8 @@ CLUSTER_NAME="webapp-staging-cluster"
 ## 🧹 Clean Up Resources
 
 ```bash
-aws ecs update-service --cluster webapp-cicd-cluster --service webapp-cicd-service --desired-count 0
-aws ecs delete-service --cluster webapp-cicd-cluster --service webapp-cicd-service --force
-aws ecs delete-cluster --cluster webapp-cicd-cluster
-aws ecr delete-repository --repository-name my-webapp --force
-aws logs delete-log-group --log-group-name /ecs/webapp-cicd-task
+chmod +x aws_cleanup.sh
+./aws_cleanup.sh
 ```
 
 (Optional: Delete IAM user and keys if created)

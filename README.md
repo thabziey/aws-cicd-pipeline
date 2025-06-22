@@ -1,4 +1,7 @@
-# Project: Automated Deployment Pipeline (AWS)
+
+
+````markdown
+# 🚀 Project: Automated Deployment Pipeline (AWS)
 
 A complete CI/CD pipeline that automatically tests and deploys your Node.js app to AWS ECS.
 
